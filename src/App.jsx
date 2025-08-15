@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import './App.css'
-import FacialExpressions from './components/FacialExpressions'
+import './app.scss';
+import FacialExpression from './components/FacialExpressions/FacialExpressions.jsx';
+import MoodSongs from './components/MoodSongs/MoodSongs.jsx';
 function App() {
   return (
-    <>
-      <FacialExpressions />
-    </>
-  )
+    <div className="app">
+      <FacialExpression />
+      <MoodSongs />
+    </div>
+  );
 }
 
-export default App
+export default App;

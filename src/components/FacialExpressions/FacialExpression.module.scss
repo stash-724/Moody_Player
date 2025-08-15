@@ -1,0 +1,110 @@
+/* Simple, tidy UI for a small left-aligned camera + right panel */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.leftPane {
+  width: 50%;
+}
+
+.videoFrame {
+  width: 20rem;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Mirror for a more natural selfie feel */
+  transform: scaleX(-1);
+}
+
+.rightPane {
+  flex: 1;
+  min-width: 240px;
+}
+
+.moodLine {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.moodValue {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.detectBtn {
+  appearance: none;
+  border: none;
+  border-radius: 12px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #111827; /* slate-900-ish */
+  color: #fff;
+  transition: transform 120ms ease, opacity 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.2);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    opacity: 0.95;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.error {
+  margin-top: 0.75rem;
+  color: #b91c1c; /* red-700-ish */
+  font-size: 0.95rem;
+}
+
+.moodSongs {
+  margin-top: 2rem;
+  min-height: 96px;
+  border: 2px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .leftPane {
+    width: 100%;
+  }
+
+  .videoFrame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; // keeps the small-window feel but responsive
+  }
+}
