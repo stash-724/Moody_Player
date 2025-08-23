@@ -1,0 +1,36 @@
+/* app.scss — dark theme base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f172a; /* slate-900 dark background */
+  color: #f1f5f9; /* light text */
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-family: inherit;
+}
+
+:root {
+  --primary-color: #1e293b; /* slate-800 */
+  --accent-color: #3b82f6; /* blue-500 */
+  --error-color: #ef4444;  /* red-500 */
+  --border-radius: 12px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  padding: 2rem;
+}
