@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 import styles from "./FacialExpression.module.scss";
-export default function FacialExpression() {
+import axios from "axios";
+export default function FacialExpression({ setSongs }) {
     const videoRef = useRef(null);
     const streamRef = useRef(null);
     const [isReady, setIsReady] = useState(false);
@@ -65,8 +66,15 @@ export default function FacialExpression() {
                     }
                 }
             }
-
             setMood(topExpression);
+            axios.get(`http://localhost:3000/songs?mood=${topExpression}`)
+               .then(res => {
+                   setSongs(res.data.songs);
+               })
+               .catch(err => {
+                   setError("Failed to fetch songs.");
+                   console.error(err);
+               });
         } catch (e) {
             setError("Detection failed. Try again.");
             console.error(e);

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
 import styles from "./MoodSongs.module.scss";
-
-export default function MoodSongs() {
-  const [songs] = useState([
-    { title: "Blinding Lights", artist: "The Weeknd", url: "#" },
-    { title: "Shape of You", artist: "Ed Sheeran", url: "#" },
-    { title: "Levitating", artist: "Dua Lipa", url: "#" }
-  ]);
-
+import { useState } from "react";
+export default function MoodSongs({ songs }) {
+  const [isPlaying, setIsPlaying] = useState(null);
+  const handlePlayPause = (index) => {
+    if(isPlaying === index) {
+      setIsPlaying(null);
+    }else setIsPlaying(index);
+  };
   return (
     <div className={styles.wrapper}>
+
       <h2>Recommended Songs</h2>
       <div className={styles.songList}>
         {songs.map((song, i) => (
@@ -18,7 +18,20 @@ export default function MoodSongs() {
               <span className={styles.title}>{song.title}</span>
               <small className={styles.artist}>{song.artist}</small>
             </div>
-            <button className={styles.playBtn}>▶</button>
+            <div className={styles.controls}>
+              {
+               isPlaying === i &&
+               <audio 
+                  src={song.audio} style={{ 
+                    display: "none" 
+                  }} 
+                  autoPlay={isPlaying === i}>
+                </audio>
+              }
+              <button className={styles.playBtn} onClick={() => handlePlayPause(i)}>
+                {isPlaying === i ? "❚❚" : "▶"}
+              </button>
+            </div>
           </div>
         ))}
       </div>
