@@ -1,0 +1,27 @@
+{
+  "labels": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "neutral"
+  ],
+  "model": "small_cnn",
+  "input": {
+    "name": "input",
+    "shape": [
+      1,
+      1,
+      48,
+      48
+    ],
+    "dtype": "float32",
+    "preprocessing": "face crop -> grayscale (0.299R + 0.587G + 0.114B) -> resize to 48x48 -> divide by 255. Normalisation is inside the model."
+  },
+  "output": {
+    "name": "logits",
+    "postprocessing": "softmax"
+  }
+}
