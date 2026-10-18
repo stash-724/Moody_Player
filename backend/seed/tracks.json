@@ -1,0 +1,486 @@
+{
+  "generatedBy": "scripts/build-seed-manifest.js",
+  "catalog": "https://incompetech.com/music/royalty-free/pieces.json",
+  "attribution": "Music by Kevin MacLeod (incompetech.com), licensed under Creative Commons: By Attribution 4.0",
+  "tracks": [
+    {
+      "title": "Flying Kerfuffle",
+      "artist": "Kevin MacLeod",
+      "mood": "happy",
+      "valence": 0.85,
+      "energy": 0.66,
+      "feel": [
+        "Bouncy",
+        "Bright",
+        "Uplifting"
+      ],
+      "bpm": 144,
+      "length": "00:04:10",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Flying%20Kerfuffle.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Jaunty Gumption",
+      "artist": "Kevin MacLeod",
+      "mood": "happy",
+      "valence": 0.84,
+      "energy": 0.66,
+      "feel": [
+        "Bouncy",
+        "Bright",
+        "Humorous",
+        "Uplifting"
+      ],
+      "bpm": 146,
+      "length": "00:01:58",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Jaunty%20Gumption.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Monkeys Spinning Monkeys",
+      "artist": "Kevin MacLeod",
+      "mood": "happy",
+      "valence": 0.84,
+      "energy": 0.66,
+      "feel": [
+        "Bouncy",
+        "Bright",
+        "Humorous",
+        "Uplifting"
+      ],
+      "bpm": 144,
+      "length": "00:02:05",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Monkeys%20Spinning%20Monkeys.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Brightly Fancy",
+      "artist": "Kevin MacLeod",
+      "mood": "happy",
+      "valence": 0.85,
+      "energy": 0.63,
+      "feel": [
+        "Bouncy",
+        "Bright",
+        "Uplifting"
+      ],
+      "bpm": 131,
+      "length": "00:02:15",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Brightly%20Fancy.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Call to Adventure",
+      "artist": "Kevin MacLeod",
+      "mood": "surprise",
+      "valence": 0.69,
+      "energy": 0.81,
+      "feel": [
+        "Action",
+        "Bright",
+        "Bouncy",
+        "Humorous",
+        "Epic"
+      ],
+      "bpm": 178,
+      "length": "00:04:07",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Call%20to%20Adventure.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Captain Scurvy",
+      "artist": "Kevin MacLeod",
+      "mood": "surprise",
+      "valence": 0.7,
+      "energy": 0.79,
+      "feel": [
+        "Bouncy",
+        "Driving",
+        "Humorous"
+      ],
+      "bpm": 180,
+      "length": "00:03:47",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Captain%20Scurvy.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Sergio's Magic Dustbin",
+      "artist": "Kevin MacLeod",
+      "mood": "surprise",
+      "valence": 0.7,
+      "energy": 0.79,
+      "feel": [
+        "Bouncy",
+        "Driving",
+        "Humorous"
+      ],
+      "bpm": 204,
+      "length": "00:02:31",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Sergio's%20Magic%20Dustbin.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Le Grand Chase",
+      "artist": "Kevin MacLeod",
+      "mood": "surprise",
+      "valence": 0.68,
+      "energy": 0.78,
+      "feel": [
+        "Action",
+        "Bouncy",
+        "Humorous"
+      ],
+      "bpm": 166,
+      "length": "00:01:41",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Le%20Grand%20Chase.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Sunday Dub",
+      "artist": "Kevin MacLeod",
+      "mood": "neutral",
+      "valence": 0.55,
+      "energy": 0.39,
+      "feel": [
+        "Grooving",
+        "Relaxed",
+        "Mysterious"
+      ],
+      "bpm": 102,
+      "length": "00:03:29",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Sunday%20Dub.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Digya",
+      "artist": "Kevin MacLeod",
+      "mood": "neutral",
+      "valence": 0.57,
+      "energy": 0.4,
+      "feel": [
+        "Grooving",
+        "Mystical"
+      ],
+      "bpm": 94,
+      "length": "00:02:47",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Digya.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Rumination",
+      "artist": "Kevin MacLeod",
+      "mood": "neutral",
+      "valence": 0.53,
+      "energy": 0.4,
+      "feel": [
+        "Somber",
+        "Uplifting"
+      ],
+      "bpm": null,
+      "length": "00:02:52",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Rumination.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Dirt Rhodes",
+      "artist": "Kevin MacLeod",
+      "mood": "neutral",
+      "valence": 0.53,
+      "energy": 0.41,
+      "feel": [
+        "Grooving",
+        "Mysterious"
+      ],
+      "bpm": 82,
+      "length": "00:02:00",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dirt%20Rhodes.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Relent",
+      "artist": "Kevin MacLeod",
+      "mood": "sad",
+      "valence": 0.18,
+      "energy": 0.21,
+      "feel": [
+        "Eerie",
+        "Somber"
+      ],
+      "bpm": 56,
+      "length": "00:02:55",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Relent.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Despair and Triumph",
+      "artist": "Kevin MacLeod",
+      "mood": "sad",
+      "valence": 0.23,
+      "energy": 0.25,
+      "feel": [
+        "Dark",
+        "Mysterious",
+        "Somber"
+      ],
+      "bpm": 43,
+      "length": "00:04:46",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Despair%20and%20Triumph.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Earnest",
+      "artist": "Kevin MacLeod",
+      "mood": "sad",
+      "valence": 0.23,
+      "energy": 0.25,
+      "feel": [
+        "Dark",
+        "Somber",
+        "Mysterious"
+      ],
+      "bpm": 48,
+      "length": "00:01:38",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Earnest.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Promising Relationship",
+      "artist": "Kevin MacLeod",
+      "mood": "sad",
+      "valence": 0.23,
+      "energy": 0.25,
+      "feel": [
+        "Dark",
+        "Mysterious",
+        "Somber"
+      ],
+      "bpm": 56,
+      "length": "00:01:48",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Promising%20Relationship.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Volatile Reaction",
+      "artist": "Kevin MacLeod",
+      "mood": "angry",
+      "valence": 0.26,
+      "energy": 0.8,
+      "feel": [
+        "Action",
+        "Aggressive",
+        "Dark",
+        "Intense"
+      ],
+      "bpm": 155,
+      "length": "00:02:45",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Volatile%20Reaction.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "The Whip (Extended Version)",
+      "artist": "Kevin MacLeod",
+      "mood": "angry",
+      "valence": 0.3,
+      "energy": 0.8,
+      "feel": [
+        "Action",
+        "Aggressive",
+        "Intense"
+      ],
+      "bpm": 126,
+      "length": "00:03:56",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/The%20Whip%20Theme%20(Extended%20Version).mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Metalmania",
+      "artist": "Kevin MacLeod",
+      "mood": "angry",
+      "valence": 0.32,
+      "energy": 0.83,
+      "feel": [
+        "Aggressive",
+        "Driving",
+        "Intense"
+      ],
+      "bpm": 150,
+      "length": "00:03:10",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Metalmania.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Exhilarate",
+      "artist": "Kevin MacLeod",
+      "mood": "angry",
+      "valence": 0.32,
+      "energy": 0.88,
+      "feel": [
+        "Aggressive",
+        "Driving",
+        "Intense"
+      ],
+      "bpm": 170,
+      "length": "00:02:25",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Exhilarate.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Cephalopod",
+      "artist": "Kevin MacLeod",
+      "mood": "fear",
+      "valence": 0.15,
+      "energy": 0.67,
+      "feel": [
+        "Aggressive",
+        "Dark"
+      ],
+      "bpm": 124,
+      "length": "00:04:08",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Cephalopod.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Darkest Child var A",
+      "artist": "Kevin MacLeod",
+      "mood": "fear",
+      "valence": 0.17,
+      "energy": 0.6,
+      "feel": [
+        "Dark",
+        "Eerie",
+        "Unnerving"
+      ],
+      "bpm": 156,
+      "length": "00:03:17",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Darkest%20Child%20var%20A.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Heart of the Beast",
+      "artist": "Kevin MacLeod",
+      "mood": "fear",
+      "valence": 0.2,
+      "energy": 0.6,
+      "feel": [
+        "Dark",
+        "Unnerving",
+        "Eerie",
+        "Intense"
+      ],
+      "bpm": null,
+      "length": "00:04:57",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Heart%20of%20the%20Beast.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Ghostpocalypse - 2 The Call",
+      "artist": "Kevin MacLeod",
+      "mood": "fear",
+      "valence": 0.22,
+      "energy": 0.63,
+      "feel": [
+        "Eerie",
+        "Intense",
+        "Unnerving"
+      ],
+      "bpm": null,
+      "length": "00:02:48",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Ghostpocalypse%20-%202%20The%20Call.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "The Second Coming",
+      "artist": "Kevin MacLeod",
+      "mood": "disgust",
+      "valence": 0.25,
+      "energy": 0.51,
+      "feel": [
+        "Eerie",
+        "Mysterious",
+        "Unnerving"
+      ],
+      "bpm": 128,
+      "length": "00:02:26",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/The%20Second%20Coming.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Day of Chaos",
+      "artist": "Kevin MacLeod",
+      "mood": "disgust",
+      "valence": 0.24,
+      "energy": 0.51,
+      "feel": [
+        "Dark",
+        "Eerie",
+        "Mysterious",
+        "Suspenseful",
+        "Unnerving"
+      ],
+      "bpm": null,
+      "length": "00:04:10",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Day%20of%20Chaos.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Echoes of Time",
+      "artist": "Kevin MacLeod",
+      "mood": "disgust",
+      "valence": 0.23,
+      "energy": 0.5,
+      "feel": [
+        "Dark",
+        "Mysterious",
+        "Unnerving"
+      ],
+      "bpm": null,
+      "length": "00:04:45",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Echoes%20of%20Time.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "On the Cool Side",
+      "artist": "Kevin MacLeod",
+      "mood": "disgust",
+      "valence": 0.23,
+      "energy": 0.5,
+      "feel": [
+        "Dark",
+        "Unnerving",
+        "Mysterious"
+      ],
+      "bpm": 120,
+      "length": "00:01:42",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/On%20the%20Cool%20Side.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}

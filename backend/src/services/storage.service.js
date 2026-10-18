@@ -1,6 +1,8 @@
 const ImageKit = require('imagekit');
 const mongoose = require('mongoose');
 
+const FOLDER = 'Moody-Player-Songs';
+
 // Created lazily: ImageKit throws if keys are missing, which would otherwise
 // crash the whole server even though only uploads need it.
 let imagekit;
@@ -15,17 +17,23 @@ function getClient() {
   return imagekit;
 }
 
-function uploadFile(file) {
+// `file` is a Buffer, or a public URL that ImageKit fetches itself.
+function upload(file, fileName = new mongoose.Types.ObjectId().toString()) {
   return new Promise((resolve, reject) => {
-    getClient().upload({
-      file: file.buffer,
-      fileName: new mongoose.Types.ObjectId().toString(),
-      folder: 'Moody-Player-Songs',
-    }, (error, result) => {
+    getClient().upload({ file, fileName, folder: FOLDER }, (error, result) => {
       if (error) return reject(error);
       resolve(result);
     });
   });
 }
 
+function uploadFile(file) {
+  return upload(file.buffer);
+}
+
+function uploadFromUrl(url, fileName) {
+  return upload(url, fileName);
+}
+
 module.exports = uploadFile;
+module.exports.uploadFromUrl = uploadFromUrl;
