@@ -25,8 +25,8 @@ export default function FacialExpression({ setSongs }) {
             streamRef.current = stream;
             if (videoRef.current) videoRef.current.srcObject = stream;
         } catch (err) {
-            setError("Webcam access blocked or unavailable.");
             console.error("Error accessing webcam: ", err);
+            throw new Error("Webcam access blocked or unavailable.");
         }
     };
 
@@ -87,12 +87,15 @@ export default function FacialExpression({ setSongs }) {
     useEffect(() => {
         (async () => {
             try {
-                await loadModels();
+                await loadModels().catch((e) => {
+                    console.error(e);
+                    throw new Error("Model load failed.");
+                });
                 await startVideo();
                 setIsReady(true);
             } catch (e) {
-                setError("Model load failed.");
-                console.error(e);
+                // isReady stays false, so detection remains disabled.
+                setError(e.message);
             }
         })();
 
@@ -117,7 +120,7 @@ export default function FacialExpression({ setSongs }) {
                 <button
                     className={styles.detectBtn}
                     onClick={detectMood}
-                    disabled={!isReady || isDetecting || !!error}
+                    disabled={!isReady || isDetecting}
                     aria-busy={isDetecting}
                 >
                     {isDetecting ? "Detecting..." : "Detect Mood"}
