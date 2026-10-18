@@ -1,11 +1,5 @@
 require('dotenv').config();
-const dns = require('dns');
-
-// Optional override for machines whose local resolver can't answer the SRV
-// lookups that mongodb+srv:// URIs need (seen with Node on some Windows setups).
-if (process.env.DNS_SERVERS) {
-  dns.setServers(process.env.DNS_SERVERS.split(',').map((s) => s.trim()));
-}
+require('./src/config/dns')();
 
 const app = require('./src/app');
 const connectDB = require('./src/db/db');
