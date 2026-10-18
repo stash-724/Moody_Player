@@ -1,4 +1,4 @@
-import './app.scss';
+import './App.scss';
 import FacialExpression from './components/FacialExpressions/FacialExpressions.jsx';
 import MoodSongs from './components/MoodSongs/MoodSongs.jsx';
 import { useState } from 'react';
