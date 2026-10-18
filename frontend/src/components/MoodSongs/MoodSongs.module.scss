@@ -15,8 +15,31 @@ h2 {
   color: var(--error-color);
 }
 
-.empty {
+.empty,
+.subtitle {
   color: #94a3b8;
+}
+
+.subtitle {
+  margin: -0.5rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.credit {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.artist a,
+.credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: #f1f5f9;
+  }
 }
 
 .songList {
