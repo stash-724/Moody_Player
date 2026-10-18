@@ -43,7 +43,7 @@
       }
     },
     {
-      "name": "GET songs for valid mood",
+      "name": "GET songs ranked by valence/energy distance",
       "event": [
         {
           "listen": "test",
@@ -51,7 +51,12 @@
             "type": "text/javascript",
             "exec": [
               "pm.test('200', () => pm.response.to.have.status(200));",
-              "pm.test('songs is an array of happy songs', () => { const s = pm.response.json().songs; pm.expect(s).to.be.an('array'); s.forEach(x => pm.expect(x.mood).to.eql('happy')); });"
+              "const body = pm.response.json();",
+              "pm.test('returns the mood target point', () => { pm.expect(body.target).to.have.keys('valence', 'energy'); });",
+              "pm.test('at most 10 songs by default', () => pm.expect(body.songs.length).to.be.at.most(10));",
+              "pm.test('sorted by ascending distance', () => { const d = body.songs.map(s => s.distance); pm.expect(d).to.eql([...d].sort((a, b) => a - b)); });",
+              "pm.test('distance matches valence/energy', () => body.songs.forEach(s => pm.expect(s.distance).to.be.closeTo(Math.hypot(s.valence - body.target.valence, s.energy - body.target.energy), 0.001)));",
+              "pm.test('songs carry licence info', () => body.songs.forEach(s => pm.expect(s).to.have.property('license')));"
             ]
           }
         }
@@ -71,6 +76,80 @@
             {
               "key": "mood",
               "value": "happy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET songs with limit=3",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('200 with exactly 3 songs', () => { pm.response.to.have.status(200); pm.expect(pm.response.json().songs.length).to.eql(3); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/songs?mood=fear&limit=3",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": [
+            {
+              "key": "mood",
+              "value": "fear"
+            },
+            {
+              "key": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET songs with invalid limit -> 400",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('400', () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/songs?mood=sad&limit=0",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": [
+            {
+              "key": "mood",
+              "value": "sad"
+            },
+            {
+              "key": "limit",
+              "value": "0"
             }
           ]
         }
@@ -206,7 +285,8 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('400 with field errors', () => { pm.response.to.have.status(400); pm.expect(pm.response.json().errors.length).to.be.above(0); });"
+              "pm.test('400 with field errors', () => { pm.response.to.have.status(400); pm.expect(pm.response.json().errors.length).to.be.above(0); });",
+              "pm.test('rejects out-of-range valence and missing energy', () => { const e = pm.response.json().errors.join(' '); pm.expect(e).to.include('valence'); pm.expect(e).to.include('energy'); });"
             ]
           }
         }
@@ -235,6 +315,11 @@
             {
               "key": "mood",
               "value": "happy",
+              "type": "text"
+            },
+            {
+              "key": "valence",
+              "value": "1.7",
               "type": "text"
             }
           ]
