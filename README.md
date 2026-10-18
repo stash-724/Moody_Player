@@ -94,7 +94,7 @@ In the frontend, a unit test checks that **onnxruntime-web** reproduces Python's
   Using a floating-point grayscale instead shifted probabilities by up to 0.003, so the integer version is used.
 - **Loop:** detect → crop → classify at about 5 fps, with a timer that never lets frames overlap.
 - **Temporal smoothing:** an exponential moving average, `smoothed = 0.3 · current + 0.7 · previous`, which covers about the last 3 frames (≈0.7 s). The displayed mood only changes when the smoothed confidence is at least **0.5**. That threshold comes from the test-set confidence curve: at ≥ 0.5 the model covers 73% of images with 75% accuracy, at ≥ 0.6 it covers 60% with 80%. Below it, the previous mood is kept.
-- **Speed:** the emotion model takes **6.3 ms** per image in Chrome's WebAssembly runtime (single thread, measured on the development PC), against 1.8 ms for native ONNX Runtime on the same machine. The app also shows live per-frame timings for detection and classification.
+- **Speed:** on its own, the emotion model takes **6.3 ms** per image in Chrome's WebAssembly runtime (single thread), against 1.8 ms for native ONNX Runtime on the same PC. In the live app on that PC, the median per frame is **22.2 ms for face detection and 20.8 ms for the emotion model**. That is about 43 ms in total, well within the 200 ms budget of a 5 fps loop. The in-app figure is higher because it is wall-clock time and includes the model waiting while the WebGL face detector uses the CPU and GPU. The app shows these timings live under the emotion bars.
 
 ## Recommendation
 
@@ -175,7 +175,7 @@ curl -X POST http://localhost:3000/songs -H "x-admin-key: $ADMIN_API_KEY" \
 
 ## Limitations and future work
 
-- FER-2013 consists of web photos, not webcam frames, so live accuracy varies with lighting, camera and pose. Fear and disgust are noticeably harder to trigger than happy or surprise.
+- FER-2013 consists of web photos, not webcam frames, so live accuracy varies with lighting, camera and pose. Fear and disgust are noticeably harder to trigger than happy or surprise. In a dark room the face detector may not find a face at all; a light in front of you helps.
 - Each model was trained once with a single seed, so there are no error bars.
 - Valence and energy come from catalogue metadata rather than audio features or listener ratings.
 - Next steps:
