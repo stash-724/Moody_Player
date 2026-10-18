@@ -1,0 +1,273 @@
+{
+  "info": {
+    "name": "Moody Player API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "adminKey",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('200 ok', () => { pm.response.to.have.status(200); pm.expect(pm.response.json().status).to.eql('ok'); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ],
+          "query": []
+        }
+      }
+    },
+    {
+      "name": "GET songs for valid mood",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('200', () => pm.response.to.have.status(200));",
+              "pm.test('songs is an array of happy songs', () => { const s = pm.response.json().songs; pm.expect(s).to.be.an('array'); s.forEach(x => pm.expect(x.mood).to.eql('happy')); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/songs?mood=happy",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": [
+            {
+              "key": "mood",
+              "value": "happy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET songs without mood -> 400",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('400', () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/songs",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": []
+        }
+      }
+    },
+    {
+      "name": "GET songs with invalid mood -> 400",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('400', () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/songs?mood=sleepy",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": [
+            {
+              "key": "mood",
+              "value": "sleepy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST song without admin key -> 401",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('401', () => pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/songs",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": []
+        }
+      }
+    },
+    {
+      "name": "POST song with wrong admin key -> 401",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('401', () => pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-admin-key",
+            "value": "definitely-wrong"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/songs",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": []
+        }
+      }
+    },
+    {
+      "name": "POST song with valid key but no data -> 400",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('400 with field errors', () => { pm.response.to.have.status(400); pm.expect(pm.response.json().errors.length).to.be.above(0); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-admin-key",
+            "value": "{{adminKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/songs",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "songs"
+          ],
+          "query": []
+        },
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "mood",
+              "value": "happy",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Unknown route -> 404",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('404', () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/does-not-exist",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "does-not-exist"
+          ],
+          "query": []
+        }
+      }
+    }
+  ]
+}
