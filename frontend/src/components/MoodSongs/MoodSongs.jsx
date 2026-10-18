@@ -1,6 +1,6 @@
 import styles from "./MoodSongs.module.scss";
 import { useState } from "react";
-export default function MoodSongs({ songs }) {
+export default function MoodSongs({ songs, mood, error }) {
   const [isPlaying, setIsPlaying] = useState(null);
   const handlePlayPause = (index) => {
     if(isPlaying === index) {
@@ -11,8 +11,13 @@ export default function MoodSongs({ songs }) {
     <div className={styles.wrapper}>
 
       <h2>Recommended Songs</h2>
-      {songs.length === 0 && (
-        <p className={styles.empty}>Detect your mood to get song recommendations.</p>
+      {error && <p className={styles.error} role="alert">{error}</p>}
+      {!error && songs.length === 0 && (
+        <p className={styles.empty}>
+          {mood
+            ? `No songs for “${mood}” yet.`
+            : "Start the camera to get song recommendations for your mood."}
+        </p>
       )}
       <div className={styles.songList}>
         {songs.map((song, i) => (

@@ -1,0 +1,154 @@
+.detector {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.cameraColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.videoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #020617;
+  border: 1px solid #1e293b;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scaleX(-1); // mirror for a natural selfie view
+}
+
+.faceBox {
+  position: absolute;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  transition: all 150ms linear;
+  pointer-events: none;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #64748b;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  appearance: none;
+  border-radius: 12px;
+  padding: 0.65rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, opacity 120ms ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}
+
+.primaryBtn {
+  border: none;
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.secondaryBtn {
+  border: 1px solid #334155;
+  background: transparent;
+  color: #f1f5f9;
+}
+
+.crop {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.cropCanvas {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  border-radius: 4px;
+  background: #020617;
+  border: 1px solid #1e293b;
+}
+
+.privacy {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  background: #111c33;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+
+  strong {
+    color: #f1f5f9;
+  }
+}
+
+.readout {
+  min-width: 0;
+}
+
+.moodLine {
+  font-size: 1.25rem;
+}
+
+.moodValue {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.meta {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.error {
+  margin-top: 0.75rem;
+  color: var(--error-color);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .detector {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

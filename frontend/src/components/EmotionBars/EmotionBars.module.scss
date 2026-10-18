@@ -1,0 +1,49 @@
+.bars {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 1rem 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.label {
+  text-transform: capitalize;
+}
+
+.track {
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #1e293b;
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #475569;
+  transition: width 180ms ease-out;
+}
+
+.value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.active {
+  color: #f1f5f9;
+  font-weight: 600;
+
+  .fill {
+    background: var(--accent-color);
+  }
+}
