@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 import styles from "./FacialExpression.module.scss";
 import axios from "axios";
+import { API_URL } from "../../config.js";
 export default function FacialExpression({ setSongs }) {
     const videoRef = useRef(null);
     const streamRef = useRef(null);
@@ -67,7 +68,7 @@ export default function FacialExpression({ setSongs }) {
                 }
             }
             setMood(topExpression);
-            axios.get(`http://localhost:3000/songs?mood=${topExpression}`)
+            axios.get(`${API_URL}/songs`, { params: { mood: topExpression } })
                .then(res => {
                    setSongs(res.data.songs);
                })

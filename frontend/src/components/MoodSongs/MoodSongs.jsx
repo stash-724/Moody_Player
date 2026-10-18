@@ -11,9 +11,12 @@ export default function MoodSongs({ songs }) {
     <div className={styles.wrapper}>
 
       <h2>Recommended Songs</h2>
+      {songs.length === 0 && (
+        <p className={styles.empty}>Detect your mood to get song recommendations.</p>
+      )}
       <div className={styles.songList}>
         {songs.map((song, i) => (
-          <div key={i} className={styles.songItem}>
+          <div key={song._id ?? i} className={styles.songItem}>
             <div className={styles.songInfo}>
               <span className={styles.title}>{song.title}</span>
               <small className={styles.artist}>{song.artist}</small>
