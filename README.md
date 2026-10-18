@@ -2,7 +2,7 @@
 
 A music player that reads your facial expression through the webcam and recommends songs that match your mood. The emotion classifier is my own: a CNN trained on FER-2013, exported to ONNX, and run **entirely in the browser**. No video frames ever leave your device.
 
-**Live demo:** _coming soon_
+**Live demo:** [moody-player-taupe.vercel.app](https://moody-player-taupe.vercel.app) (needs a webcam; the free API host may take up to a minute to wake on the first visit)
 
 ![Moody Player detecting "happy" and recommending upbeat tracks](docs/screenshot.png)
 <sub>Screenshot from an automated test. Chrome's fake camera plays a FER-2013 sample face, so no real person's video is shown.</sub>
